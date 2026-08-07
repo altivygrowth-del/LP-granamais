@@ -11,7 +11,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:linear-gradient(180deg,#fff,#f8fafb);color:var(--dark)}
+body{font-family:Inter,Arial,sans-serif;background:linear-gradient(180deg,#fff,#f8fafb);color:var(--dark);padding-bottom:80px;}
 .container{max-width:1180px;margin:auto;padding:0 22px}
 header{position:fixed;top:0;left:0;width:100%;z-index:999;transition:.3s;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.05)}
 nav{display:flex;justify-content:space-between;align-items:center;height:82px}
@@ -76,12 +76,12 @@ section{padding:80px 0}
 .card:hover,.step:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(0,0,0,.08)}
 .step{border-left:5px solid var(--green)}
 
-/* ESTILOS DA NOVA SEÇÃO DARK (POR QUE ESCOLHER) */
+/* ESTILOS SEÇÃO DARK */
 .section-dark {
-  background-color: #0b130e;
+  background-color: #050b07;
   background-image: 
-    linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(34, 197, 94, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.04) 1px, transparent 1px);
   background-size: 30px 30px;
   color: #fff;
   padding: 100px 0;
@@ -219,6 +219,274 @@ section{padding:80px 0}
   color: #fff;
 }
 
+/* ESTILOS DA SEÇÃO DE PREÇO (OFERTA) */
+.pricing-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(12, 22, 16, 0.85);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.plan-title {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.price-old {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.price-old del {
+  text-decoration: line-through;
+}
+
+.discount-tag {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.price-main {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #22c55e;
+  line-height: 1;
+  margin: 16px 0;
+}
+
+.price-main span {
+  font-size: 2rem;
+  vertical-align: super;
+}
+
+.payment-sub {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  color: #d1d5db;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.quote-box {
+  border: 1px dashed rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.03);
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #22c55e;
+  font-size: 0.88rem;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.features-title {
+  text-align: left;
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #d1d5db;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.feature-item svg {
+  color: #22c55e;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.btn-cta-large {
+  width: 100%;
+  background: #22c55e;
+  color: #051a0e;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 18px 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: .3s;
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+}
+
+.btn-cta-large:hover {
+  background: #16a34a;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.trust-signals {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: #6b7280;
+  font-size: 0.8rem;
+  margin-top: 16px;
+}
+
+.guarantee-box {
+  margin-top: 30px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  background: rgba(34, 197, 94, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.guarantee-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+.guarantee-text h4 {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.guarantee-text p {
+  color: #9ca3af;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* BARRA FIXA BOTTOM (STICKY BAR) */
+.sticky-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(10, 20, 14, 0.95);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  backdrop-filter: blur(12px);
+  padding: 10px 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: calc(100% - 40px);
+  max-width: 500px;
+}
+
+.sticky-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sticky-icon {
+  width: 32px;
+  height: 32px;
+  background: #16a34a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.sticky-title {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sticky-price {
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+.sticky-price strong {
+  color: #22c55e;
+}
+
+.sticky-btn {
+  background: #22c55e;
+  color: #051a0e;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  margin-left: auto;
+  white-space: nowrap;
+  transition: .25s;
+}
+
+.sticky-btn:hover {
+  background: #16a34a;
+  color: #fff;
+}
+
 /* FAQ STYLES */
 .faq {
   display: flex;
@@ -286,10 +554,11 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
 
 @media(max-width:1000px){
   nav ul{display:none}
-  .hero,.grid,.footer,.dark-grid{grid-template-columns:1fr}
+  .hero,.grid,.footer,.dark-grid,.features-grid{grid-template-columns:1fr}
   .hero{padding-top:100px}
   h1{font-size:2.6rem}
   .section-dark h2{font-size:2.2rem}
+  .pricing-card{padding:24px 18px;}
 }
 </style>
 </head>
@@ -344,7 +613,7 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
 </div>
 </section>
 
-<!-- NOVA SEÇÃO: POR QUE ESCOLHER O GRANA+ -->
+<!-- SEÇÃO POR QUE ESCOLHER -->
 <section id="beneficios" class="section-dark">
 <div class="container">
   <div class="badge-dark">
@@ -354,7 +623,6 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
   <p class="subtitle">Sem fórmulas mirabolantes. Uma ferramenta moderna projetada para se adaptar à sua rotina diária.</p>
 
   <div class="dark-grid">
-    <!-- Card 1 -->
     <div class="dark-card">
       <div>
         <div class="icon-box">
@@ -369,7 +637,6 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
       </div>
     </div>
 
-    <!-- Card 2 -->
     <div class="dark-card">
       <div>
         <div class="icon-box">
@@ -384,7 +651,6 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
       </div>
     </div>
 
-    <!-- Card 3 -->
     <div class="dark-card">
       <div>
         <div class="icon-box">
@@ -399,7 +665,6 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
       </div>
     </div>
 
-    <!-- Card 4 -->
     <div class="dark-card">
       <div>
         <div class="icon-box">
@@ -414,7 +679,6 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
       </div>
     </div>
 
-    <!-- Card 5 -->
     <div class="dark-card">
       <div>
         <div class="icon-box">
@@ -429,7 +693,6 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
       </div>
     </div>
 
-    <!-- Card 6 (Destaque) -->
     <div class="dark-card highlight">
       <div>
         <span class="tag-offer">OFERTA ESPECIAL</span>
@@ -444,6 +707,7 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
 </div>
 </section>
 
+<!-- SEÇÃO COMO FUNCIONA -->
 <section id="como">
 <div class="container">
 <span class="tag">Como funciona</span>
@@ -460,6 +724,109 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
 </div>
 </section>
 
+<!-- SEÇÃO DE PREÇO / OFERTA (ANTES DO FAQ) -->
+<section id="preco" class="section-dark" style="padding-top: 40px;">
+<div class="container">
+  <div class="badge-dark">
+    ⚡ OFERTA DE LANÇAMENTO VITALÍCIO
+  </div>
+  <h2>Quanto custa continuar sem<br><span>controlar seu dinheiro?</span></h2>
+  <p class="subtitle">Um pequeno investimento único para transformar sua relação com o dinheiro para sempre.</p>
+
+  <div class="pricing-card">
+    <div class="pricing-badge">⚡ OFERTA POR TEMPO LIMITADO</div>
+    <div class="plan-title">PLANO COMPLETO VITALÍCIO</div>
+    
+    <div class="price-old">
+      De <del>R$ 97,00</del> <span class="discount-tag">-69% DE DESCONTO</span>
+    </div>
+
+    <div class="price-main">
+      <span>R$</span>29,90
+    </div>
+
+    <div class="payment-sub">
+      PAGAMENTO ÚNICO • SEM MENSALIDADES
+    </div>
+
+    <div class="quote-box">
+      "Menos do que você pode perder esquecendo uma única conta."
+    </div>
+
+    <div class="features-title">TUDO O QUE ESTÁ INCLUÍDO NO SEU ACESSO:</div>
+
+    <div class="features-grid">
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Acesso Vitalício sem cobranças recorrentes
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Dashboard Financeiro Inteligente em tempo real
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Módulo exclusivo Dinheiro Livre™
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Controle Ilimitado de Cartões de Crédito e Faturas
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Controle de Receitas, Despesas e Fluxo de Caixa
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Gestão de Metas Financeiras e Patrimônio
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Acesso à IA Financeira em constante evolução
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Sincronização entre Celular, Tablet e Computador
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Relatórios visuais e exportação de dados
+      </div>
+      <div class="feature-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Atualizações e novos recursos sem custo extra
+      </div>
+      <div class="feature-item" style="grid-column: 1 / -1;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Suporte prioritário e ambiente 100% criptografado
+      </div>
+    </div>
+
+    <a href="#" class="btn-cta-large">
+      COMEÇAR AGORA POR R$ 29,90 →
+    </a>
+
+    <div class="trust-signals">
+      <span>⚡ Liberação Imediata</span> • 
+      <span>PIX, Cartão ou Boleto</span> • 
+      <span>🔒 SSL Criptografado</span>
+    </div>
+
+    <div class="guarantee-box">
+      <div class="guarantee-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="guarantee-text">
+        <h4>Garantia Incondicional de 7 Dias</h4>
+        <p>Experimente o Grana+ por 7 dias. Se não se apaixonar ou se achar que não valeu cada centavo, devolvemos 100% do seu dinheiro sem perguntas.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- SEÇÃO FAQ -->
 <section id="faq">
 <div class="container">
 <span class="tag">FAQ</span>
@@ -519,6 +886,18 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
 </div>
 </div>
 </section>
+
+<!-- BARRA FIXA INFERIOR (STICKY BAR) -->
+<div class="sticky-bar">
+  <div class="sticky-info">
+    <div class="sticky-icon">G+</div>
+    <div>
+      <div class="sticky-title">Grana+ • Acesso Vitalício</div>
+      <div class="sticky-price">De R$ 97 por <strong>R$ 29,90</strong></div>
+    </div>
+  </div>
+  <a href="#preco" class="sticky-btn">Garantir por R$ 29,90 →</a>
+</div>
 
 <footer>
 <div class="container footer">
