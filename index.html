@@ -1,298 +1,72 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grana+</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#08120E;
-  --card:#111B16;
-  --green:#38C172;
-  --text:#fff;
-  --sub:#A7B3AD;
+.problem{
+  padding:120px 0;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
-
-body{background:var(--bg);color:var(--text);}
-
-/* NAV */
-.nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
-  background:rgba(0,0,0,0.5);
-}
-
-.menu{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:30px;
-}
-
-.menu a{color:var(--sub);text-decoration:none;}
-
-.cta-nav{
-  background:var(--green);
-  padding:10px 20px;
-  border-radius:10px;
-  color:#fff;
-  text-decoration:none;
-}
-
-/* HERO */
-.hero{
-  display:flex;
+.problem-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
   align-items:center;
-  justify-content:space-between;
-  padding:140px 60px;
+  gap:80px;
 }
 
-.hero-left{max-width:520px;}
-
-.hero-left h1{font-size:52px;}
-.hero-left span{color:var(--green);}
-
-.cta{margin-top:20px;}
-
-.primary{
-  background:var(--green);
-  padding:14px 24px;
-  border-radius:12px;
-  text-decoration:none;
-  color:#fff;
-}
-
-/* RIGHT HERO */
-.hero-right{position:relative;}
-
-.phone img{width:260px;border-radius:30px;}
-
-.ia{
-  position:absolute;
-  right:-120px;
-  top:50px;
-  width:200px;
-}
-
-.floating-card{
-  position:absolute;
-  background:var(--card);
-  padding:15px;
-  border-radius:12px;
-  width:180px;
-}
-
-.card1{top:0;right:0;}
-.card2{bottom:30%;left:-80px;}
-.card3{bottom:0;right:0;}
-
-/* SECTION 2 */
-.section2{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:100px 60px;
-  gap:60px;
-}
-
-.section2 h2{
-  font-size:42px;
+/* TEXTO */
+.problem-left h2{
+  font-size:48px;
+  line-height:1.2;
   margin-bottom:40px;
 }
 
-.grid{
+/* CARDS */
+.problem-cards{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
 }
 
-.card{
+.p-card{
   background:var(--card);
   padding:20px;
-  border-radius:12px;
+  border-radius:16px;
+  font-weight:500;
+  color:var(--text-secondary);
+  transition:.3s;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
-/* SECTION 3 */
-.section3{
+.p-card:hover{
+  transform:translateY(-5px);
+  color:#fff;
+}
+
+/* IMAGEM */
+.problem-right{
   display:flex;
-  align-items:center;
   justify-content:center;
-  padding:100px 60px;
-  gap:60px;
 }
 
-.steps{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+.problem-right img{
+  width:100%;
+  max-width:520px;
+  border-radius:16px;
+  box-shadow:0 40px 100px rgba(0,0,0,0.6);
 }
 
-.step{
-  background:var(--card);
-  padding:15px;
-  border-radius:10px;
-  cursor:pointer;
+/* MOBILE */
+@media(max-width:900px){
+  .problem-grid{
+    grid-template-columns:1fr;
+  }
+
+  .problem-left h2{
+    font-size:34px;
+    text-align:center;
+  }
+
+  .problem-cards{
+    grid-template-columns:1fr;
+  }
+
+  .problem-right{
+    margin-top:40px;
+  }
 }
-
-.step.active{border:1px solid var(--green);}
-
-.step-content{
-  margin-top:20px;
-  color:var(--sub);
-}
-
-/* FAQ */
-.section{
-  padding:100px 20px;
-  text-align:center;
-}
-
-.faq-item{
-  margin:10px auto;
-  max-width:600px;
-  cursor:pointer;
-}
-
-.faq-item p{display:none;color:var(--sub);}
-.faq-item.active p{display:block;}
-
-</style>
-</head>
-
-<body>
-
-<header class="nav">
-  <div>Grana+</div>
-  <nav class="menu">
-    <a href="#">Recursos</a>
-    <a href="#">Preço</a>
-    <a href="#">FAQ</a>
-  </nav>
-  <a href="https://pay.kiwify.com.br/LKl8poM" class="cta-nav">Começar</a>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-
-<div class="hero-left">
-<h1>
-Descubra quanto você pode gastar hoje<br>
-<span>sem comprometer seu futuro</span>
-</h1>
-
-<div class="cta">
-<a href="https://pay.kiwify.com.br/LKl8poM" class="primary">Começar agora</a>
-</div>
-</div>
-
-<div class="hero-right">
-
-<div class="phone">
-<img src="iphone.png">
-</div>
-
-<img src="ia financeira.png" class="ia">
-
-<div class="floating-card card1">Controle total</div>
-<div class="floating-card card2">Metas claras</div>
-<div class="floating-card card3">Segurança</div>
-
-</div>
-
-</section>
-
-<!-- SECTION 2 -->
-<section class="section2">
-
-<div>
-<img src="notebook.png" width="400">
-</div>
-
-<div>
-<h2>Você está perdendo dinheiro sem perceber</h2>
-
-<div class="grid">
-<div class="card">Gastos invisíveis</div>
-<div class="card">Falta de controle</div>
-<div class="card">Ansiedade</div>
-<div class="card">Sem planejamento</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- SECTION 3 -->
-<section class="section3">
-
-<div>
-<img src="iphone.png" width="260">
-</div>
-
-<div>
-<h2>Como o Grana+ resolve isso</h2>
-
-<div class="steps">
-<div class="step active" onclick="changeStep(1)">1</div>
-<div class="step" onclick="changeStep(2)">2</div>
-<div class="step" onclick="changeStep(3)">3</div>
-<div class="step" onclick="changeStep(4)">4</div>
-</div>
-
-<div class="step-content" id="content">
-Controle automático de gastos em tempo real.
-</div>
-
-</div>
-
-</section>
-
-<!-- FAQ -->
-<section class="section">
-
-<h2>FAQ</h2>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-<h4>Preciso de cartão?</h4>
-<p>Não precisa.</p>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-<h4>É seguro?</h4>
-<p>Sim, totalmente.</p>
-</div>
-
-</section>
-
-<script>
-function changeStep(n){
-  const texts=[
-    "Controle automático de gastos.",
-    "Planejamento financeiro inteligente.",
-    "Relatórios claros.",
-    "Interface simples."
-  ]
-
-  document.getElementById("content").innerText=texts[n-1]
-
-  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active"))
-  document.querySelectorAll(".step")[n-1].classList.add("active")
-}
-
-function toggleFaq(el){
-  el.classList.toggle("active")
-}
-</script>
-
-</body>
-</html>
