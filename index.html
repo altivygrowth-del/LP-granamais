@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,8 +6,8 @@
 <title>Grana+ Premium</title>
 <style>
 :root{
---green:#16a34a;--green2:#22c55e;--dark:#101828;--muted:#667085;
---bg:#f8fafb;--line:#e5e7eb;
+  --green:#16a34a;--green2:#22c55e;--dark:#101828;--muted:#667085;
+  --bg:#f8fafb;--line:#e5e7eb;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -23,72 +22,52 @@ nav a{text-decoration:none;color:#344054}
 .btn-primary{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 15px 35px rgba(34,197,94,.25)}
 .btn-outline{border:2px solid var(--green);color:var(--green)}
 .btn:hover{transform:translateY(-3px) scale(1.03)}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 140px;
+}
+
 .mockup-wrap{
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .mockup-wrap::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:520px;
-
-    height:520px;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(circle,
-    rgba(22,163,74,.18) 0%,
-    rgba(22,163,74,.08) 45%,
-    transparent 75%);
-
-    filter:blur(60px);
-
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background: radial-gradient(circle, rgba(22,163,74,.18) 0%, rgba(22,163,74,.08) 45%, transparent 75%);
+  filter:blur(60px);
 }
 
 .mockup{
-
-    position:relative;
-
-    z-index:2;
-
-    width:135%;
-
-    max-width:none;
-
-    filter:
-        drop-shadow(0 45px 70px rgba(0,0,0,.22));
-
-    transition:.45s;
-
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  filter: drop-shadow(0 45px 70px rgba(0,0,0,.22));
+  transition:.45s;
 }
 
 .mockup:hover{
-
-    transform:
-        translateY(-10px)
-        scale(1.03);
-
+  transform: translateY(-10px) scale(1.03);
 }
+
 .badge{display:inline-block;background:#ebf9ef;color:var(--green);padding:8px 16px;border-radius:999px;font-weight:700}
-h1{font-size:4rem;line-height:1.05;margin:20px 0}
+h1{font-size:3.5rem;line-height:1.05;margin:20px 0}
 h2{font-size:2.6rem;margin-bottom:16px}
 p{color:var(--muted);line-height:1.8}
 .actions{display:flex;gap:16px;margin-top:30px;flex-wrap:wrap}
-.mockup-wrap{position:relative;display:flex;justify-content:center}
-.mockup-wrap:before{content:"";position:absolute;width:70%;height:70%;background:radial-gradient(circle,rgba(34,197,94,.2),transparent 70%);filter:blur(55px)}
-@keyframes float{50%{transform:translateY(-10px)}}
+
 section{padding:80px 0}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .tag{color:var(--green);font-weight:700;margin-bottom:8px;display:block}
@@ -99,10 +78,12 @@ section{padding:80px 0}
 footer{background:#111827;color:#fff;padding:60px 0;margin-top:40px}
 footer p,footer a{color:#d0d5dd;text-decoration:none}
 .footer{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+
 @media(max-width:1000px){
-nav ul{display:none}
-.hero,.grid,.footer{grid-template-columns:1fr}
-h1{font-size:2.6rem}
+  nav ul{display:none}
+  .hero,.grid,.footer{grid-template-columns:1fr}
+  .hero{padding-top:100px}
+  h1{font-size:2.6rem}
 }
 </style>
 </head>
@@ -153,7 +134,7 @@ h1{font-size:2.6rem}
 </div>
 <div style="margin-top:24px"><a class="btn btn-primary" href="#preco">Quero organizar minhas finanças</a></div>
 </div>
-<div class="mockup-wrap"><img class="mockup" src="celular.png"></div>
+<div class="mockup-wrap"><img class="mockup" src="celular.png" alt="Celular"></div>
 </div>
 </section>
 
@@ -162,7 +143,7 @@ h1{font-size:2.6rem}
 <span class="tag">Como funciona</span>
 <h2>Como o Grana+ resolve isso?</h2>
 <div class="grid">
-<div class="mockup-wrap"><img class="mockup" src="celular.png"></div>
+<div class="mockup-wrap"><img class="mockup" src="celular.png" alt="Celular"></div>
 <div class="timeline">
 <div class="step"><strong>1.</strong> Organize tudo em um só lugar.</div>
 <div class="step"><strong>2.</strong> Controle seus gastos.</div>
