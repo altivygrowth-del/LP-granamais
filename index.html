@@ -1,3 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grana+</title>
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* BASE */
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto;
+  background:#0a0a0a;
+  color:#fff;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+:root{
+  --card:#111;
+  --text-secondary:#aaa;
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:140px 0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:60px;
+}
+
+.hero h1{
+  font-size:56px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  color:var(--text-secondary);
+  margin-bottom:30px;
+}
+
+.hero img{
+  width:100%;
+  border-radius:20px;
+  animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+/* ================= PROBLEMA ================= */
 .problem{
   padding:120px 0;
 }
@@ -5,18 +69,15 @@
 .problem-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  align-items:center;
   gap:80px;
+  align-items:center;
 }
 
-/* TEXTO */
 .problem-left h2{
   font-size:48px;
-  line-height:1.2;
   margin-bottom:40px;
 }
 
-/* CARDS */
 .problem-cards{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -27,46 +88,233 @@
   background:var(--card);
   padding:20px;
   border-radius:16px;
-  font-weight:500;
-  color:var(--text-secondary);
   transition:.3s;
-  border:1px solid rgba(255,255,255,0.05);
 }
 
 .p-card:hover{
   transform:translateY(-5px);
-  color:#fff;
-}
-
-/* IMAGEM */
-.problem-right{
-  display:flex;
-  justify-content:center;
 }
 
 .problem-right img{
   width:100%;
-  max-width:520px;
-  border-radius:16px;
-  box-shadow:0 40px 100px rgba(0,0,0,0.6);
+  max-width:500px;
 }
 
-/* MOBILE */
-@media(max-width:900px){
-  .problem-grid{
-    grid-template-columns:1fr;
-  }
+/* ================= SOLUÇÃO ================= */
+.solution{
+  padding:120px 0;
+  text-align:center;
+}
 
-  .problem-left h2{
-    font-size:34px;
+.solution h2{
+  font-size:42px;
+  margin-bottom:60px;
+}
+
+.solution-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.solution img{
+  width:100%;
+  max-width:350px;
+  margin:auto;
+}
+
+.steps{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.step{
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.step:hover{
+  background:#1a1a1a;
+}
+
+.step.active{
+  background:#222;
+}
+
+.step span{
+  font-weight:bold;
+  margin-right:10px;
+}
+
+/* ================= FAQ ================= */
+.faq{
+  padding:120px 0;
+}
+
+.faq h2{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.faq-list{
+  max-width:800px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.faq-item{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.faq-question{
+  width:100%;
+  background:none;
+  border:none;
+  color:#fff;
+  padding:20px;
+  text-align:left;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  padding:0 20px;
+  transition:.4s;
+  color:var(--text-secondary);
+}
+
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding:20px;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+  .hero-grid,
+  .problem-grid,
+  .solution-grid{
+    grid-template-columns:1fr;
     text-align:center;
   }
-
-  .problem-cards{
-    grid-template-columns:1fr;
-  }
-
-  .problem-right{
-    margin-top:40px;
-  }
 }
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Controle total do seu dinheiro</h1>
+      <p>Use IA para organizar sua vida financeira</p>
+    </div>
+    <img src="ia financeira.png">
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problem">
+  <div class="container problem-grid">
+
+    <div class="problem-left">
+      <h2>Você está perdendo dinheiro sem perceber</h2>
+
+      <div class="problem-cards">
+        <div class="p-card">💸 Gastos invisíveis</div>
+        <div class="p-card">⚠️ Falta de controle</div>
+        <div class="p-card">😰 Ansiedade financeira</div>
+        <div class="p-card">📉 Sem planejamento</div>
+      </div>
+    </div>
+
+    <div class="problem-right">
+      <img src="notebook.png">
+    </div>
+
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section class="solution">
+  <div class="container">
+
+    <h2>Como o Grana+ resolve isso?</h2>
+
+    <div class="solution-grid">
+
+      <img src="celular.png">
+
+      <div class="steps">
+        <div class="step active"><span>1</span> Organize tudo em um só lugar</div>
+        <div class="step"><span>2</span> Entenda seus gastos</div>
+        <div class="step"><span>3</span> Descubra seu dinheiro livre</div>
+        <div class="step"><span>4</span> Tome decisões melhores</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+
+    <h2>Perguntas Frequentes</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">O Grana+ é um aplicativo?<span>+</span></button>
+        <div class="faq-answer">Plataforma completa com IA financeira.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Como funciona o Dinheiro Livre?<span>+</span></button>
+        <div class="faq-answer">Mostra quanto você pode gastar.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Preciso entender finanças?<span>+</span></button>
+        <div class="faq-answer">Não, é simples e intuitivo.</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+
+/* FAQ */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-question').onclick=()=>{
+    item.classList.toggle('active')
+  }
+})
+
+/* STEPS INTERATIVOS */
+document.querySelectorAll('.step').forEach(step=>{
+  step.onclick=()=>{
+    document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'))
+    step.classList.add('active')
+  }
+})
+
+</script>
+
+</body>
+</html>
