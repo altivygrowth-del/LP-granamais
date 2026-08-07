@@ -76,7 +76,150 @@ section{padding:80px 0}
 .card:hover,.step:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(0,0,0,.08)}
 .step{border-left:5px solid var(--green)}
 
-/* ESTILOS DO FAQ INTERATIVO (ACCORDION) */
+/* ESTILOS DA NOVA SEÇÃO DARK (POR QUE ESCOLHER) */
+.section-dark {
+  background-color: #0b130e;
+  background-image: 
+    linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.badge-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.section-dark h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.section-dark h2 span {
+  color: #22c55e;
+}
+
+.section-dark .subtitle {
+  color: #9ca3af;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  font-size: 1.05rem;
+}
+
+.dark-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.dark-card {
+  background: rgba(18, 28, 22, 0.6);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 16px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .3s;
+}
+
+.dark-card:hover {
+  border-color: rgba(34, 197, 94, 0.4);
+  transform: translateY(-4px);
+}
+
+.dark-card .icon-box {
+  width: 42px;
+  height: 42px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #22c55e;
+  margin-bottom: 20px;
+}
+
+.dark-card h3 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.dark-card p {
+  color: #9ca3af;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.dark-card .card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #22c55e;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 16px;
+}
+
+.dark-card.highlight {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: linear-gradient(180deg, rgba(18, 28, 22, 0.8) 0%, rgba(12, 38, 22, 0.6) 100%);
+}
+
+.tag-offer {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.btn-card-action {
+  background: #22c55e;
+  color: #051a0e;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: .25s;
+  margin-top: 20px;
+}
+
+.btn-card-action:hover {
+  background: #16a34a;
+  color: #fff;
+}
+
+/* FAQ STYLES */
 .faq {
   display: flex;
   flex-direction: column;
@@ -143,9 +286,10 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
 
 @media(max-width:1000px){
   nav ul{display:none}
-  .hero,.grid,.footer{grid-template-columns:1fr}
+  .hero,.grid,.footer,.dark-grid{grid-template-columns:1fr}
   .hero{padding-top:100px}
   h1{font-size:2.6rem}
+  .section-dark h2{font-size:2.2rem}
 }
 </style>
 </head>
@@ -200,12 +344,112 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
 </div>
 </section>
 
+<!-- NOVA SEÇÃO: POR QUE ESCOLHER O GRANA+ -->
+<section id="beneficios" class="section-dark">
+<div class="container">
+  <div class="badge-dark">
+    <span>✦</span> Por que escolher o Grana+
+  </div>
+  <h2>Criado para você ter <span>paz financeira.</span></h2>
+  <p class="subtitle">Sem fórmulas mirabolantes. Uma ferramenta moderna projetada para se adaptar à sua rotina diária.</p>
+
+  <div class="dark-grid">
+    <!-- Card 1 -->
+    <div class="dark-card">
+      <div>
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Interface Intuitiva</h3>
+        <p>Zero complicação ou gráficos confusos. Design focado na experiência do usuário para você entender tudo em segundos.</p>
+      </div>
+      <div class="card-footer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Incluso na versão vitalícia
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="dark-card">
+      <div>
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
+        </div>
+        <h3>Controle Total</h3>
+        <p>Acompanhamento unificado de receitas, despesas, cartões de crédito e patrimônio acumulado em um só lugar.</p>
+      </div>
+      <div class="card-footer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Incluso na versão vitalícia
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="dark-card">
+      <div>
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Acesso em Qualquer Lugar</h3>
+        <p>Acesse pelo computador, notebook, tablet ou celular. Sincronização em tempo real em todas as plataformas.</p>
+      </div>
+      <div class="card-footer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Incluso na versão vitalícia
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="dark-card">
+      <div>
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        </div>
+        <h3>Atualizações Constantes</h3>
+        <p>Novas melhorias, novos relatórios e expansão dos recursos de IA entregues continuamente sem cobrar mensalidade extra.</p>
+      </div>
+      <div class="card-footer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Incluso na versão vitalícia
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="dark-card">
+      <div>
+        <div class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Segurança Bancária</h3>
+        <p>Seus dados protegidos com protocolo SSL, criptografia de ponta a ponta e total conformidade com a LGPD.</p>
+      </div>
+      <div class="card-footer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Incluso na versão vitalícia
+      </div>
+    </div>
+
+    <!-- Card 6 (Destaque) -->
+    <div class="dark-card highlight">
+      <div>
+        <span class="tag-offer">OFERTA ESPECIAL</span>
+        <h3>Sem mensalidades recorrentes</h3>
+        <p>Você paga R$ 29,90 uma única vez e ganha acesso contínuo com todas as atualizações inclusas.</p>
+      </div>
+      <a href="#preco" class="btn-card-action">
+        Aproveitar por R$ 29,90 →
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+
 <section id="como">
 <div class="container">
 <span class="tag">Como funciona</span>
 <h2>Como o Grana+ resolve isso?</h2>
 <div class="grid">
-<div class="mockup-wrap"><img class="mockup" src="ia financeira.png" alt="Celular"></div>
+<div class="mockup-wrap"><img class="mockup" src="celular.png" alt="Celular"></div>
 <div class="timeline">
 <div class="step"><strong>1.</strong> Organize tudo em um só lugar.</div>
 <div class="step"><strong>2.</strong> Controle seus gastos.</div>
