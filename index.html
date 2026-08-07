@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Grana+ | Controle financeiro inteligente</title>
+<title>Grana+</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -12,18 +11,14 @@
 :root{
   --bg:#08120E;
   --card:#111B16;
-  --green:#1E6B4B;
-  --green-light:#38C172;
+  --green:#38C172;
   --text:#fff;
   --sub:#A7B3AD;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
 
-body{
-  background:var(--bg);
-  color:var(--text);
-}
+body{background:var(--bg);color:var(--text);}
 
 /* NAV */
 .nav{
@@ -32,28 +27,22 @@ body{
   width:100%;
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:20px 40px;
-  background:rgba(8,18,14,0.7);
-  backdrop-filter:blur(10px);
-  z-index:1000;
+  background:rgba(0,0,0,0.5);
 }
 
 .menu{
-  display:flex;
-  gap:30px;
   position:absolute;
   left:50%;
   transform:translateX(-50%);
+  display:flex;
+  gap:30px;
 }
 
-.menu a{
-  color:var(--sub);
-  text-decoration:none;
-}
+.menu a{color:var(--sub);text-decoration:none;}
 
 .cta-nav{
-  background:var(--green-light);
+  background:var(--green);
   padding:10px 20px;
   border-radius:10px;
   color:#fff;
@@ -63,160 +52,120 @@ body{
 /* HERO */
 .hero{
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:140px 60px 80px;
-  min-height:100vh;
+  justify-content:space-between;
+  padding:140px 60px;
 }
 
-.hero-left{
-  max-width:520px;
-}
+.hero-left{max-width:520px;}
 
-.hero-left h1{
-  font-size:52px;
-}
+.hero-left h1{font-size:52px;}
+.hero-left span{color:var(--green);}
 
-.hero-left span{
-  color:var(--green-light);
-}
-
-.hero-left p{
-  margin-top:20px;
-  color:var(--sub);
-}
-
-.cta{
-  margin-top:30px;
-  display:flex;
-  gap:15px;
-}
+.cta{margin-top:20px;}
 
 .primary{
-  background:linear-gradient(135deg,var(--green),var(--green-light));
-  padding:14px 26px;
+  background:var(--green);
+  padding:14px 24px;
   border-radius:12px;
-  color:#fff;
   text-decoration:none;
-}
-
-.secondary{
-  background:transparent;
-  border:1px solid #333;
-  padding:14px 26px;
-  border-radius:12px;
   color:#fff;
 }
 
-.trust{
-  margin-top:20px;
-  display:flex;
-  gap:20px;
-  color:var(--sub);
-  font-size:14px;
+/* RIGHT HERO */
+.hero-right{position:relative;}
+
+.phone img{width:260px;border-radius:30px;}
+
+.ia{
+  position:absolute;
+  right:-120px;
+  top:50px;
+  width:200px;
 }
 
-/* RIGHT */
-.hero-right{
-  position:relative;
-  width:500px;
-}
-
-/* PHONE */
-.phone{
-  width:260px;
-  margin:auto;
-  animation:float 6s ease-in-out infinite;
-}
-
-.phone img{
-  width:100%;
-  border-radius:30px;
-  box-shadow:0 40px 120px rgba(0,0,0,0.8);
-}
-
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-20px)}
-  100%{transform:translateY(0)}
-}
-
-/* CARDS */
 .floating-card{
   position:absolute;
-  background:rgba(17,27,22,0.9);
-  border:1px solid rgba(255,255,255,0.05);
-  padding:16px;
-  border-radius:14px;
-  width:200px;
-  font-size:14px;
-  backdrop-filter:blur(10px);
-}
-
-.floating-card small{
-  display:block;
-  color:var(--sub);
-  margin-top:5px;
+  background:var(--card);
+  padding:15px;
+  border-radius:12px;
+  width:180px;
 }
 
 .card1{top:0;right:0;}
-.card2{bottom:40%;left:-60px;}
+.card2{bottom:30%;left:-80px;}
 .card3{bottom:0;right:0;}
 
-/* SECTION */
+/* SECTION 2 */
+.section2{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:100px 60px;
+  gap:60px;
+}
+
+.section2 h2{
+  font-size:42px;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+}
+
+/* SECTION 3 */
+.section3{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:100px 60px;
+  gap:60px;
+}
+
+.steps{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.step{
+  background:var(--card);
+  padding:15px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.step.active{border:1px solid var(--green);}
+
+.step-content{
+  margin-top:20px;
+  color:var(--sub);
+}
+
+/* FAQ */
 .section{
   padding:100px 20px;
   text-align:center;
 }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-  margin-top:40px;
-}
-
-.card{
-  background:var(--card);
-  padding:30px;
-  border-radius:16px;
-}
-
-/* PRICING */
-.price{
-  font-size:48px;
-  margin:20px 0;
-}
-
-/* FAQ */
-.faq{
-  max-width:700px;
-  margin:auto;
-  text-align:left;
-}
-
 .faq-item{
-  margin-bottom:15px;
-  border-bottom:1px solid #222;
-  padding-bottom:10px;
+  margin:10px auto;
+  max-width:600px;
   cursor:pointer;
 }
 
-.faq-item p{
-  display:none;
-  color:var(--sub);
-}
+.faq-item p{display:none;color:var(--sub);}
+.faq-item.active p{display:block;}
 
-.faq-item.active p{
-  display:block;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .hero{flex-direction:column;text-align:center;}
-  .hero-right{margin-top:40px;}
-  .menu{display:none;}
-}
 </style>
 </head>
 
@@ -224,125 +173,125 @@ body{
 
 <header class="nav">
   <div>Grana+</div>
-
   <nav class="menu">
-    <a href="#recursos">Recursos</a>
-    <a href="#preco">Preço</a>
-    <a href="#faq">FAQ</a>
+    <a href="#">Recursos</a>
+    <a href="#">Preço</a>
+    <a href="#">FAQ</a>
   </nav>
-
   <a href="https://pay.kiwify.com.br/LKl8poM" class="cta-nav">Começar</a>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 
-  <div class="hero-left">
-    <h1>
-      Descubra quanto você pode gastar hoje<br>
-      <span>sem comprometer seu futuro</span>
-    </h1>
+<div class="hero-left">
+<h1>
+Descubra quanto você pode gastar hoje<br>
+<span>sem comprometer seu futuro</span>
+</h1>
 
-    <p>Controle total da sua vida financeira em um único lugar.</p>
+<div class="cta">
+<a href="https://pay.kiwify.com.br/LKl8poM" class="primary">Começar agora</a>
+</div>
+</div>
 
-    <div class="cta">
-      <a href="https://pay.kiwify.com.br/LKl8poM" class="primary">Começar agora</a>
-      <button class="secondary">Ver como funciona</button>
-    </div>
+<div class="hero-right">
 
-    <div class="trust">
-      <span>🔒 Seguro</span>
-      <span>⚡ Acesso imediato</span>
-      <span>💳 Sem cartão</span>
-    </div>
-  </div>
+<div class="phone">
+<img src="iphone.png">
+</div>
 
-  <div class="hero-right">
+<img src="ia financeira.png" class="ia">
 
-    <div class="phone">
-      <img src="iphone.png">
-    </div>
+<div class="floating-card card1">Controle total</div>
+<div class="floating-card card2">Metas claras</div>
+<div class="floating-card card3">Segurança</div>
 
-    <div class="floating-card card1">
-      📊 Visão completa
-      <small>Controle tudo em tempo real</small>
-    </div>
-
-    <div class="floating-card card2">
-      🎯 Metas financeiras
-      <small>Acompanhe objetivos</small>
-    </div>
-
-    <div class="floating-card card3">
-      🔐 Segurança total
-      <small>Seus dados protegidos</small>
-    </div>
-
-  </div>
+</div>
 
 </section>
 
+<!-- SECTION 2 -->
+<section class="section2">
+
+<div>
+<img src="notebook.png" width="400">
+</div>
+
+<div>
+<h2>Você está perdendo dinheiro sem perceber</h2>
+
+<div class="grid">
+<div class="card">Gastos invisíveis</div>
+<div class="card">Falta de controle</div>
+<div class="card">Ansiedade</div>
+<div class="card">Sem planejamento</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- SECTION 3 -->
+<section class="section3">
+
+<div>
+<img src="iphone.png" width="260">
+</div>
+
+<div>
+<h2>Como o Grana+ resolve isso</h2>
+
+<div class="steps">
+<div class="step active" onclick="changeStep(1)">1</div>
+<div class="step" onclick="changeStep(2)">2</div>
+<div class="step" onclick="changeStep(3)">3</div>
+<div class="step" onclick="changeStep(4)">4</div>
+</div>
+
+<div class="step-content" id="content">
+Controle automático de gastos em tempo real.
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
 <section class="section">
-  <h2>Você está perdendo dinheiro sem perceber</h2>
 
-  <div class="cards">
-    <div class="card">Gastos invisíveis todos os meses</div>
-    <div class="card">Falta de controle financeiro</div>
-    <div class="card">Ansiedade com dinheiro</div>
-    <div class="card">Sem planejamento futuro</div>
-  </div>
-</section>
+<h2>FAQ</h2>
 
-<section class="section" id="recursos">
-  <h2>Como o Grana+ resolve isso</h2>
+<div class="faq-item" onclick="toggleFaq(this)">
+<h4>Preciso de cartão?</h4>
+<p>Não precisa.</p>
+</div>
 
-  <div class="cards">
-    <div class="card">Controle de gastos automático</div>
-    <div class="card">Planejamento inteligente</div>
-    <div class="card">Relatórios claros</div>
-    <div class="card">Interface simples</div>
-  </div>
-</section>
-
-<section class="section" id="preco">
-  <h2>Acesso completo</h2>
-
-  <div class="price">R$19,90</div>
-
-  <p>Pagamento único. Acesso vitalício.</p>
-
-  <a href="https://pay.kiwify.com.br/LKl8poM" class="primary">Comprar agora</a>
-</section>
-
-<section class="section" id="faq">
-  <h2>Perguntas frequentes</h2>
-
-  <div class="faq">
-
-    <div class="faq-item">
-      <h4>Preciso de cartão?</h4>
-      <p>Não. Você pode acessar sem cartão.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>É seguro?</h4>
-      <p>Sim. Seus dados são protegidos.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Como acesso?</h4>
-      <p>Após a compra você recebe acesso imediato.</p>
-    </div>
-
-  </div>
+<div class="faq-item" onclick="toggleFaq(this)">
+<h4>É seguro?</h4>
+<p>Sim, totalmente.</p>
+</div>
 
 </section>
 
 <script>
-document.querySelectorAll(".faq-item").forEach(item=>{
-  item.addEventListener("click",()=>{
-    item.classList.toggle("active")
-  })
-})
+function changeStep(n){
+  const texts=[
+    "Controle automático de gastos.",
+    "Planejamento financeiro inteligente.",
+    "Relatórios claros.",
+    "Interface simples."
+  ]
+
+  document.getElementById("content").innerText=texts[n-1]
+
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active"))
+  document.querySelectorAll(".step")[n-1].classList.add("active")
+}
+
+function toggleFaq(el){
+  el.classList.toggle("active")
+}
 </script>
 
 </body>
