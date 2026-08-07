@@ -71,10 +71,72 @@ p{color:var(--muted);line-height:1.8}
 section{padding:80px 0}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .tag{color:var(--green);font-weight:700;margin-bottom:8px;display:block}
-.cards,.timeline,.faq{display:grid;gap:16px}
-.card,.step,.faq-item{background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:18px;padding:22px;backdrop-filter:blur(10px);transition:.25s}
-.card:hover,.step:hover,.faq-item:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(0,0,0,.08)}
+.cards,.timeline{display:grid;gap:16px}
+.card,.step{background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:18px;padding:22px;backdrop-filter:blur(10px);transition:.25s}
+.card:hover,.step:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(0,0,0,.08)}
 .step{border-left:5px solid var(--green)}
+
+/* ESTILOS DO FAQ INTERATIVO (ACCORDION) */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: .25s;
+}
+
+.faq-item:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+.faq-item summary {
+  padding: 22px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--dark);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--green);
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item p {
+  padding: 22px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 footer{background:#111827;color:#fff;padding:60px 0;margin-top:40px}
 footer p,footer a{color:#d0d5dd;text-decoration:none}
 .footer{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
@@ -159,9 +221,57 @@ footer p,footer a{color:#d0d5dd;text-decoration:none}
 <span class="tag">FAQ</span>
 <h2>Perguntas Frequentes</h2>
 <div class="faq">
-<div class="faq-item"><strong>O Grana+ é um aplicativo ou uma planilha?</strong><p>É uma plataforma completa de gestão financeira.</p></div>
-<div class="faq-item"><strong>Como funciona o Dinheiro Livre™?</strong><p>Mostra quanto você pode gastar sem comprometer suas metas.</p></div>
-<div class="faq-item"><strong>O acesso é vitalício?</strong><p>Sim.</p></div>
+
+  <details class="faq-item">
+    <summary>O Grana+ é um aplicativo ou uma planilha?</summary>
+    <p>Não. O Grana+ é uma plataforma completa de gestão financeira que reúne receitas, despesas, cartões, metas, patrimônio e relatórios em um único lugar. Além disso, conta com uma IA Financeira para ajudar você a tomar decisões melhores.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Como funciona o Dinheiro Livre™?</summary>
+    <p>O Dinheiro Livre™ é um cálculo exclusivo do Grana+ que considera suas receitas, despesas fixas, cartões de crédito e metas financeiras para mostrar quanto você realmente pode gastar sem comprometer seu planejamento.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Preciso entender de finanças para usar?</summary>
+    <p>Não. O Grana+ foi desenvolvido para ser simples e intuitivo. Mesmo quem nunca utilizou um sistema financeiro consegue organizar sua vida financeira em poucos minutos.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>O acesso é vitalício?</summary>
+    <p>Sim. Nesta oferta de lançamento você paga apenas uma vez e recebe acesso vitalício à versão adquirida do Grana+, sem mensalidades.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Posso acessar pelo celular?</summary>
+    <p>Sim. O Grana+ funciona perfeitamente em computadores, tablets e smartphones, permitindo acompanhar suas finanças de qualquer lugar.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Meus dados estão seguros?</summary>
+    <p>Sim. Seus dados são armazenados com tecnologias modernas de segurança e criptografia, garantindo privacidade e proteção das suas informações financeiras.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Como recebo acesso após a compra?</summary>
+    <p>Assim que o pagamento for confirmado, você receberá um e-mail com as instruções para acessar sua conta e começar a utilizar o Grana+ imediatamente.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>E se eu não gostar?</summary>
+    <p>Você conta com uma garantia de <strong>7 dias</strong>. Se o Grana+ não atender às suas expectativas, basta solicitar o reembolso dentro desse período.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Quais formas de pagamento são aceitas?</summary>
+    <p>Você pode pagar com cartão de crédito, PIX ou boleto bancário, conforme as opções disponíveis no checkout.</p>
+  </details>
+
+  <details class="faq-item">
+    <summary>Terei atualizações do sistema?</summary>
+    <p>Sim. O Grana+ está em constante evolução e novas funcionalidades serão adicionadas ao longo do tempo. Os compradores da oferta de lançamento terão acesso às atualizações incluídas na versão adquirida.</p>
+  </details>
+
 </div>
 </div>
 </section>
