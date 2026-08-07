@@ -1,319 +1,302 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grana+</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grana+ | Controle Financeiro Inteligente</title>
 
 <style>
-
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box}
-
-/* BASE */
 body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
   background:#0a0a0a;
   color:#fff;
+  overflow-x:hidden;
 }
 
-.container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  backdrop-filter:blur(20px);
+  background:rgba(0,0,0,0.6);
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  z-index:999;
 }
-
-:root{
-  --card:#111;
-  --text-secondary:#aaa;
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:20px;
+  opacity:.8;
 }
+nav a:hover{opacity:1}
 
-/* ================= HERO ================= */
+/* HERO */
 .hero{
-  padding:140px 0;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  height:100vh;
+  display:flex;
   align-items:center;
-  gap:60px;
+  justify-content:space-between;
+  padding:120px 10%;
 }
-
 .hero h1{
   font-size:56px;
-  margin-bottom:20px;
+  line-height:1.1;
 }
-
 .hero p{
-  color:var(--text-secondary);
-  margin-bottom:30px;
+  margin:20px 0;
+  color:#aaa;
 }
-
+.cta{
+  background:#00ff88;
+  color:#000;
+  padding:14px 28px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+}
 .hero img{
-  width:100%;
-  border-radius:20px;
+  width:420px;
   animation:float 6s ease-in-out infinite;
 }
-
 @keyframes float{
   0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
+  50%{transform:translateY(-20px)}
 }
 
-/* ================= PROBLEMA ================= */
-.problem{
-  padding:120px 0;
+/* SECTION */
+.section{
+  padding:100px 10%;
 }
-
-.problem-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.problem-left h2{
-  font-size:48px;
+.section h2{
+  font-size:42px;
   margin-bottom:40px;
 }
 
-.problem-cards{
+/* GRID */
+.grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(2,1fr);
   gap:20px;
 }
-
-.p-card{
-  background:var(--card);
-  padding:20px;
-  border-radius:16px;
+.card{
+  background:#111;
+  padding:30px;
+  border-radius:12px;
   transition:.3s;
 }
-
-.p-card:hover{
+.card:hover{
   transform:translateY(-5px);
+  background:#151515;
 }
 
-.problem-right img{
-  width:100%;
-  max-width:500px;
-}
-
-/* ================= SOLUÇÃO ================= */
-.solution{
-  padding:120px 0;
-  text-align:center;
-}
-
-.solution h2{
-  font-size:42px;
-  margin-bottom:60px;
-}
-
-.solution-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
+/* FLEX */
+.flex{
+  display:flex;
   align-items:center;
+  justify-content:space-between;
+  gap:40px;
+}
+.flex img{
+  width:420px;
 }
 
-.solution img{
+/* BOTÕES INTERATIVOS */
+.steps button{
   width:100%;
-  max-width:350px;
-  margin:auto;
-}
-
-.steps{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.step{
-  background:var(--card);
-  padding:18px;
-  border-radius:12px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.step:hover{
-  background:#1a1a1a;
-}
-
-.step.active{
-  background:#222;
-}
-
-.step span{
-  font-weight:bold;
-  margin-right:10px;
-}
-
-/* ================= FAQ ================= */
-.faq{
-  padding:120px 0;
-}
-
-.faq h2{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.faq-list{
-  max-width:800px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.faq-item{
-  background:var(--card);
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.faq-question{
-  width:100%;
-  background:none;
+  padding:20px;
+  margin-bottom:10px;
+  background:#111;
   border:none;
   color:#fff;
-  padding:20px;
+  border-radius:10px;
+  cursor:pointer;
   text-align:left;
-  display:flex;
-  justify-content:space-between;
+}
+.steps button:hover{
+  background:#151515;
+}
+.step-content{
+  margin-top:20px;
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* FAQ */
+.faq-item{
+  background:#111;
+  border-radius:10px;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+.faq-title{
+  padding:20px;
   cursor:pointer;
 }
-
-.faq-answer{
+.faq-content{
+  padding:0 20px;
   max-height:0;
   overflow:hidden;
-  padding:0 20px;
   transition:.4s;
-  color:var(--text-secondary);
+  color:#aaa;
 }
-
-.faq-item.active .faq-answer{
-  max-height:200px;
+.faq-item.active .faq-content{
+  max-height:300px;
   padding:20px;
 }
 
-/* RESPONSIVO */
-@media(max-width:900px){
-  .hero-grid,
-  .problem-grid,
-  .solution-grid{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  color:#777;
 }
-
 </style>
 </head>
 
 <body>
 
+<nav>
+  <div><strong>Grana+</strong></div>
+  <div>
+    <a href="#">Benefícios</a>
+    <a href="#">Como Funciona</a>
+    <a href="#">FAQ</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>Controle total do seu dinheiro</h1>
-      <p>Use IA para organizar sua vida financeira</p>
+  <div>
+    <h1>Controle total do seu dinheiro</h1>
+    <p>Organize, visualize e cresça seu patrimônio com inteligência.</p>
+    <a class="cta" href="https://pay.kiwify.com.br/LKl8poM">Comprar agora</a>
+  </div>
+  <img src="ia-financeira.png"/>
+</section>
+
+<!-- SECTION 2 -->
+<section class="section">
+  <h2>Você está perdendo dinheiro sem perceber</h2>
+
+  <div class="flex">
+    <img src="notebook.png"/>
+
+    <div class="grid">
+      <div class="card">Gastos invisíveis todo mês</div>
+      <div class="card">Falta de controle financeiro</div>
+      <div class="card">Uso errado do cartão</div>
+      <div class="card">Sem visão do futuro</div>
     </div>
-    <img src="ia financeira.png">
   </div>
 </section>
 
-<!-- PROBLEMA -->
-<section class="problem">
-  <div class="container problem-grid">
+<!-- SECTION 3 -->
+<section class="section">
+  <h2>Como o Grana+ resolve isso?</h2>
 
-    <div class="problem-left">
-      <h2>Você está perdendo dinheiro sem perceber</h2>
+  <div class="flex">
+    <img src="celular.png"/>
 
-      <div class="problem-cards">
-        <div class="p-card">💸 Gastos invisíveis</div>
-        <div class="p-card">⚠️ Falta de controle</div>
-        <div class="p-card">😰 Ansiedade financeira</div>
-        <div class="p-card">📉 Sem planejamento</div>
+    <div class="steps">
+      <button onclick="showStep(1)">1. Conecte suas finanças</button>
+      <button onclick="showStep(2)">2. Visualize tudo</button>
+      <button onclick="showStep(3)">3. Receba insights</button>
+      <button onclick="showStep(4)">4. Tenha controle total</button>
+
+      <div id="stepContent" class="step-content">
+        Clique em um passo
       </div>
-    </div>
-
-    <div class="problem-right">
-      <img src="notebook.png">
-    </div>
-
-  </div>
-</section>
-
-<!-- SOLUÇÃO -->
-<section class="solution">
-  <div class="container">
-
-    <h2>Como o Grana+ resolve isso?</h2>
-
-    <div class="solution-grid">
-
-      <img src="celular.png">
-
-      <div class="steps">
-        <div class="step active"><span>1</span> Organize tudo em um só lugar</div>
-        <div class="step"><span>2</span> Entenda seus gastos</div>
-        <div class="step"><span>3</span> Descubra seu dinheiro livre</div>
-        <div class="step"><span>4</span> Tome decisões melhores</div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq">
-  <div class="container">
+<section class="section">
+  <h2>Perguntas Frequentes</h2>
 
-    <h2>Perguntas Frequentes</h2>
-
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-question">O Grana+ é um aplicativo?<span>+</span></button>
-        <div class="faq-answer">Plataforma completa com IA financeira.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Como funciona o Dinheiro Livre?<span>+</span></button>
-        <div class="faq-answer">Mostra quanto você pode gastar.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Preciso entender finanças?<span>+</span></button>
-        <div class="faq-answer">Não, é simples e intuitivo.</div>
-      </div>
-
-    </div>
-
+  <div class="faq-item">
+    <div class="faq-title">O Grana+ é um aplicativo ou uma planilha?</div>
+    <div class="faq-content">É uma plataforma completa com IA financeira.</div>
   </div>
+
+  <div class="faq-item">
+    <div class="faq-title">Como funciona o Dinheiro Livre™?</div>
+    <div class="faq-content">Mostra quanto você pode gastar sem comprometer.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">Preciso entender de finanças?</div>
+    <div class="faq-content">Não, é simples e intuitivo.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">O acesso é vitalício?</div>
+    <div class="faq-content">Sim, pagamento único.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">Posso acessar pelo celular?</div>
+    <div class="faq-content">Sim, funciona em qualquer dispositivo.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">Meus dados estão seguros?</div>
+    <div class="faq-content">Sim, com criptografia moderna.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">Como recebo acesso?</div>
+    <div class="faq-content">Por e-mail após pagamento.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">E se eu não gostar?</div>
+    <div class="faq-content">Garantia de 7 dias.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">Formas de pagamento?</div>
+    <div class="faq-content">Cartão, PIX ou boleto.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">Terei atualizações?</div>
+    <div class="faq-content">Sim, o sistema evolui constantemente.</div>
+  </div>
+
 </section>
 
+<footer>
+  © 2026 Grana+ — Todos os direitos reservados
+</footer>
+
 <script>
+function showStep(step){
+  const content = document.getElementById("stepContent");
+
+  const texts = {
+    1:"Centralize todas suas receitas e despesas",
+    2:"Veja relatórios claros e objetivos",
+    3:"Receba recomendações inteligentes",
+    4:"Tenha domínio total do seu dinheiro"
+  };
+
+  content.innerText = texts[step];
+}
 
 /* FAQ */
-document.querySelectorAll('.faq-item').forEach(item=>{
-  item.querySelector('.faq-question').onclick=()=>{
-    item.classList.toggle('active')
-  }
-})
-
-/* STEPS INTERATIVOS */
-document.querySelectorAll('.step').forEach(step=>{
-  step.onclick=()=>{
-    document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'))
-    step.classList.add('active')
-  }
-})
-
+document.querySelectorAll(".faq-title").forEach(item=>{
+  item.addEventListener("click",()=>{
+    const parent = item.parentElement;
+    parent.classList.toggle("active");
+  });
+});
 </script>
 
 </body>
