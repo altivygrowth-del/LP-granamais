@@ -3,376 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grana+</title>
-
+<title>Grana+ - Landing Page Premium (Base)</title>
 <style>
-
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box}
-
-/* BASE */
-body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto;
-  background:#0a0a0a;
-  color:#fff;
-}
-
-.container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-}
-
 :root{
-  --card:#111;
-  --text-secondary:#aaa;
+ --green:#16a34a;
+ --green2:#22c55e;
+ --bg:#f8faf8;
+ --text:#111827;
+ --muted:#6b7280;
+ --card:rgba(255,255,255,.7);
 }
-
-/* SCROLL ANIMATION BASE */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition: all .8s cubic-bezier(.2,.6,.2,1);
-}
-
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ================= HERO ================= */
-.hero{
-  padding:140px 0;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:60px;
-}
-
-.hero h1{
-  font-size:56px;
-  margin-bottom:20px;
-}
-
-.hero p{
-  color:var(--text-secondary);
-  margin-bottom:30px;
-}
-
-.hero img{
-  width:100%;
-  border-radius:20px;
-  animation:float 6s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-}
-
-/* ================= PROBLEMA ================= */
-.problem{
-  padding:120px 0;
-}
-
-.problem-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.problem-left h2{
-  font-size:48px;
-  margin-bottom:40px;
-}
-
-.problem-cards{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.p-card{
-  background:var(--card);
-  padding:20px;
-  border-radius:16px;
-  transition:.3s;
-}
-
-.p-card:hover{
-  transform:translateY(-5px);
-}
-
-/* ================= SOLUÇÃO ================= */
-.solution{
-  padding:120px 0;
-  text-align:center;
-}
-
-.solution h2{
-  font-size:42px;
-  margin-bottom:60px;
-}
-
-.solution-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-
-.solution img{
-  width:100%;
-  max-width:350px;
-  margin:auto;
-}
-
-.steps{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.step{
-  background:var(--card);
-  padding:18px;
-  border-radius:12px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.step:hover{
-  background:#1a1a1a;
-}
-
-.step.active{
-  background:#222;
-}
-
-/* ================= FAQ ================= */
-.faq{
-  padding:120px 0;
-}
-
-.faq h2{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.faq-list{
-  max-width:900px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.faq-item{
-  background:var(--card);
-  border-radius:12px;
-  overflow:hidden;
-  transition:.3s;
-}
-
-.faq-question{
-  width:100%;
-  background:none;
-  border:none;
-  color:#fff;
-  padding:22px;
-  text-align:left;
-  display:flex;
-  justify-content:space-between;
-  cursor:pointer;
-  font-size:16px;
-}
-
-.faq-answer{
-  max-height:0;
-  overflow:hidden;
-  padding:0 22px;
-  transition:.5s;
-  color:var(--text-secondary);
-}
-
-.faq-item.active .faq-answer{
-  max-height:300px;
-  padding:22px;
-}
-
-/* RESPONSIVO */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:linear-gradient(#fff,#f8faf8);color:var(--text);line-height:1.6}
+.container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border-bottom:1px solid #eee;z-index:10}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+nav ul{display:flex;gap:24px;list-style:none}
+a{text-decoration:none;color:inherit}
+.btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:700;transition:.25s}
+.btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 15px 35px rgba(22,163,74,.2)}
+.btn-primary{background:var(--green);color:#fff}
+.btn-outline{border:2px solid var(--green);color:var(--green)}
+section{padding:70px 0}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.badge{display:inline-block;background:#e9f9ef;color:var(--green);padding:8px 14px;border-radius:999px;font-weight:700}
+h1{font-size:3.4rem;line-height:1.05;margin:20px 0}
+h2{font-size:2.4rem;margin-bottom:16px}
+.lead,.section-description{color:var(--muted);max-width:650px}
+.hero img,.mockup{width:100%;border-radius:22px;box-shadow:0 35px 60px rgba(0,0,0,.12)}
+.cta-group{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap}
+.problem-grid,.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.section-tag{color:var(--green);font-weight:700;margin-bottom:10px;display:inline-block}
+.problem-cards,.timeline,.faq-list{display:grid;gap:16px}
+.p-card,.step,.faq-item{background:var(--card);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,.05);border-radius:18px;padding:20px;transition:.25s}
+.p-card:hover,.step:hover,.faq-item:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
+.faq-question{width:100%;background:none;border:none;display:flex;justify-content:space-between;font-size:1rem;font-weight:700;cursor:pointer}
+.faq-answer{margin-top:10px;color:var(--muted)}
+footer{background:#111827;color:#fff;padding:50px 0;margin-top:60px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
 @media(max-width:900px){
-  .hero-grid,
-  .problem-grid,
-  .solution-grid{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
+.hero,.problem-grid,.solution-grid,.footer-grid{grid-template-columns:1fr}
+h1{font-size:2.4rem}
+nav ul{display:none}
 }
-
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero reveal">
-  <div class="container hero-grid">
-    <div>
-      <h1>Controle total do seu dinheiro</h1>
-      <p>Use IA para organizar sua vida financeira</p>
-    </div>
-    <img src="ia financeira.png">
-  </div>
+<header>
+<div class="container">
+<nav>
+<h2 style="margin:0;color:#16a34a">Grana+</h2>
+<ul>
+<li><a href="#recursos">Recursos</a></li>
+<li><a href="#como-funciona">Como Funciona</a></li>
+<li><a href="#beneficios">Benefícios</a></li>
+<li><a href="#preco">Preço</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+<a class="btn btn-primary" href="#preco">COMEÇAR AGORA</a>
+</nav>
+</div>
+</header>
+
+<section class="hero container">
+<div>
+<span class="badge">Novo • Descubra seu Dinheiro Livre™</span>
+<h1>Organize sua vida financeira de forma simples.</h1>
+<p class="lead">O Grana+ reúne receitas, despesas, cartões, metas e patrimônio em uma plataforma moderna para você finalmente ter controle do seu dinheiro.</p>
+<div class="cta-group">
+<a class="btn btn-primary" href="#preco">COMEÇAR AGORA</a>
+<a class="btn btn-outline" href="#">VER DEMONSTRAÇÃO</a>
+</div>
+</div>
+<div><img src="dashboard.png" alt="Dashboard"></div>
 </section>
 
-<!-- PROBLEMA -->
-<section class="problem reveal">
-  <div class="container problem-grid">
-
-    <div class="problem-left">
-      <h2>Você está perdendo dinheiro sem perceber</h2>
-
-      <div class="problem-cards">
-        <div class="p-card reveal">💸 Gastos invisíveis</div>
-        <div class="p-card reveal">⚠️ Falta de controle</div>
-        <div class="p-card reveal">😰 Ansiedade financeira</div>
-        <div class="p-card reveal">📉 Sem planejamento</div>
-      </div>
-    </div>
-
-    <div class="problem-right reveal">
-      <img src="notebook.png">
-    </div>
-
-  </div>
+<section id="problema">
+<div class="container problem-grid">
+<div>
+<span class="section-tag">O problema</span>
+<h2>Você está perdendo dinheiro sem perceber</h2>
+<p class="section-description">Pequenos gastos e falta de controle prejudicam seu planejamento financeiro.</p>
+<div class="problem-cards">
+<div class="p-card">💸 <strong>Gastos invisíveis</strong></div>
+<div class="p-card">⚠️ <strong>Falta de controle</strong></div>
+<div class="p-card">😰 <strong>Ansiedade financeira</strong></div>
+<div class="p-card">📉 <strong>Sem planejamento</strong></div>
+</div>
+<div style="margin-top:24px"><a class="btn btn-primary" href="#preco">Quero organizar minhas finanças</a></div>
+</div>
+<div><img class="mockup" src="notebook.png" alt=""></div>
+</div>
 </section>
 
-<!-- SOLUÇÃO -->
-<section class="solution reveal">
-  <div class="container">
-
-    <h2>Como o Grana+ resolve isso?</h2>
-
-    <div class="solution-grid">
-
-      <img src="celular.png" class="reveal">
-
-      <div class="steps">
-        <div class="step reveal active"><span>1</span> Organize tudo em um só lugar</div>
-        <div class="step reveal"><span>2</span> Entenda seus gastos</div>
-        <div class="step reveal"><span>3</span> Descubra seu dinheiro livre</div>
-        <div class="step reveal"><span>4</span> Tome decisões melhores</div>
-      </div>
-
-    </div>
-  </div>
+<section id="como-funciona">
+<div class="container">
+<span class="section-tag">Como funciona</span>
+<h2>Como o Grana+ resolve isso?</h2>
+<div class="solution-grid">
+<div><img class="mockup" src="celular.png" alt=""></div>
+<div class="timeline">
+<div class="step"><strong>1.</strong> Organize tudo em um só lugar</div>
+<div class="step"><strong>2.</strong> Controle seus gastos</div>
+<div class="step"><strong>3.</strong> Descubra seu Dinheiro Livre™</div>
+<div class="step"><strong>4.</strong> Tenha tranquilidade financeira</div>
+</div>
+</div>
+<div style="margin-top:28px"><a class="btn btn-primary" href="#preco">Descobrir meu Dinheiro Livre™</a></div>
+</div>
 </section>
 
-<!-- FAQ -->
-<section class="faq reveal">
-  <div class="container">
-
-    <h2>Perguntas Frequentes</h2>
-
-    <div class="faq-list">
-
-      <div class="faq-item">
-        <button class="faq-question">O Grana+ é um aplicativo ou uma planilha?<span>+</span></button>
-        <div class="faq-answer">Não. O Grana+ é uma plataforma completa de gestão financeira que reúne receitas, despesas, cartões, metas, patrimônio e relatórios em um único lugar. Além disso, conta com uma IA Financeira para ajudar você a tomar decisões melhores.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Como funciona o Dinheiro Livre™?<span>+</span></button>
-        <div class="faq-answer">O Dinheiro Livre™ considera receitas, despesas, cartões e metas para mostrar quanto você pode gastar sem comprometer seu planejamento.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Preciso entender de finanças para usar?<span>+</span></button>
-        <div class="faq-answer">Não. O sistema é simples e intuitivo para qualquer pessoa.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">O acesso é vitalício?<span>+</span></button>
-        <div class="faq-answer">Sim. Pagamento único com acesso vitalício à versão adquirida.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Posso acessar pelo celular?<span>+</span></button>
-        <div class="faq-answer">Sim. Funciona em celular, tablet e computador.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Meus dados estão seguros?<span>+</span></button>
-        <div class="faq-answer">Sim. Utilizamos criptografia e tecnologias modernas de segurança.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Como recebo acesso após a compra?<span>+</span></button>
-        <div class="faq-answer">Você recebe um e-mail com acesso imediatamente após confirmação.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">E se eu não gostar?<span>+</span></button>
-        <div class="faq-answer">Garantia de 7 dias com reembolso.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Quais formas de pagamento?<span>+</span></button>
-        <div class="faq-answer">Cartão, PIX ou boleto.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Terei atualizações?<span>+</span></button>
-        <div class="faq-answer">Sim. Novas funcionalidades serão adicionadas ao longo do tempo.</div>
-      </div>
-
-    </div>
-
-  </div>
+<section id="faq">
+<div class="container">
+<span class="section-tag">FAQ</span>
+<h2>Perguntas Frequentes</h2>
+<div class="faq-list">
+<div class="faq-item"><button class="faq-question">O Grana+ é um aplicativo ou uma planilha?<span>+</span></button><div class="faq-answer">É uma plataforma completa de gestão financeira.</div></div>
+<div class="faq-item"><button class="faq-question">Como funciona o Dinheiro Livre™?<span>+</span></button><div class="faq-answer">Calcula quanto você pode gastar sem comprometer seus objetivos.</div></div>
+<div class="faq-item"><button class="faq-question">O acesso é vitalício?<span>+</span></button><div class="faq-answer">Sim, para a versão adquirida.</div></div>
+</div>
+</div>
 </section>
+
+<footer>
+<div class="container footer-grid">
+<div><h3>Grana+</h3><p>Controle financeiro inteligente para quem deseja viver com mais tranquilidade.</p></div>
+<div><h4>Links</h4><p>Recursos<br>Benefícios<br>FAQ</p></div>
+<div><h4>Legal</h4><p>Política<br>Termos</p></div>
+</div>
+</footer>
 
 <script>
-
-/* FAQ */
-document.querySelectorAll('.faq-item').forEach(item=>{
-  item.querySelector('.faq-question').onclick=()=>{
-    item.classList.toggle('active')
-  }
+document.querySelectorAll(".faq-question").forEach(btn=>{
+ btn.onclick=()=>{
+   const ans=btn.nextElementSibling;
+   ans.style.display=ans.style.display==="block"?"none":"block";
+ }
 })
-
-/* STEPS */
-document.querySelectorAll('.step').forEach(step=>{
-  step.onclick=()=>{
-    document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'))
-    step.classList.add('active')
-  }
-})
-
-/* SCROLL REVEAL (APPLE STYLE) */
-const reveals = document.querySelectorAll('.reveal')
-
-function revealOnScroll(){
-  const windowHeight = window.innerHeight
-
-  reveals.forEach((el,i)=>{
-    const top = el.getBoundingClientRect().top
-
-    if(top < windowHeight - 80){
-      setTimeout(()=>{
-        el.classList.add('active')
-      }, i * 80)
-    }
-  })
-}
-
-window.addEventListener('scroll', revealOnScroll)
-window.addEventListener('load', revealOnScroll)
-
 </script>
 
 </body>
