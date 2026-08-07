@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grana+ | Seu copiloto financeiro inteligente</title>
+<meta name="description" content="Organize suas finanças com o Grana+.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #1E6B4B;
+  --green-light: #38C172;
+  --bg: #08120E;
+  --card: #111B16;
+  --text: #FFFFFF;
+  --sub: #A7B3AD;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body {
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container {
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+h1 {
+  font-size:64px;
+  font-weight:800;
+}
+
+h2 {
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.subtitle {
+  color:var(--sub);
+  margin-bottom:40px;
+}
+
+.hero {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before {
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, rgba(56,193,114,0.15), transparent);
+  top:-100px;
+  right:-100px;
+  filter:blur(80px);
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  position:relative;
+}
+
+.cta {
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+}
+
+button {
+  border:none;
+  padding:14px 28px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.primary {
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+
+.primary::after {
+  content:"";
+  position:absolute;
+  width:120%;
+  height:120%;
+  top:100%;
+  left:-10%;
+  background:rgba(255,255,255,0.15);
+  transition:.4s;
+}
+
+.primary:hover::after {
+  top:-20%;
+}
+
+.secondary {
+  background:transparent;
+  border:1px solid #333;
+  color:white;
+}
+
+.big {
+  font-size:18px;
+  padding:18px 32px;
+}
+
+.mockup {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  height:200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--sub);
+  backdrop-filter:blur(12px);
+  transition:.4s;
+}
+
+.large { height:400px; }
+
+.grid-4 {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card {
+  background:rgba(17,27,22,0.7);
+  padding:30px;
+  border-radius:16px;
+  backdrop-filter:blur(12px);
+  transition:.4s;
+}
+
+.card:hover, .mockup:hover {
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+
+.feature { text-align:center; }
+
+.highlight {
+  background:linear-gradient(135deg,#0d2b1f,#06110c);
+  text-align:center;
+  padding:100px 20px;
+}
+
+.pricing { text-align:center; }
+
+.price-box {
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  margin-top:30px;
+}
+
+.old {
+  text-decoration:line-through;
+  color:var(--sub);
+}
+
+.faq-item button {
+  width:100%;
+  text-align:left;
+  background:var(--card);
+  margin-bottom:5px;
+}
+
+.answer {
+  overflow:hidden;
+  max-height:0;
+  transition:.4s;
+}
+
+.cta-final {
+  text-align:center;
+  padding:120px 20px;
+}
+
+/* ANIMAÇÕES */
+.reveal {
+  opacity:0;
+  transform:translateY(40px) scale(.98);
+  filter:blur(8px);
+  transition:all .8s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+}
+
+.delay-1 { transition-delay:.1s }
+.delay-2 { transition-delay:.2s }
+.delay-3 { transition-delay:.3s }
+.delay-4 { transition-delay:.4s }
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  .hero-grid { grid-template-columns:1fr; }
+  .grid-4, .grid-3 { grid-template-columns:1fr; }
+  h1 { font-size:40px; }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1 class="reveal">Seu copiloto financeiro inteligente.</h1>
+      <p class="reveal delay-1">Organize, visualize e domine seu dinheiro.</p>
+      <div class="cta reveal delay-2">
+        <button class="primary">Começar Agora</button>
+        <button class="secondary">Ver demonstração</button>
+      </div>
+    </div>
+    <div class="mockup large reveal delay-3">MOCKUP DASHBOARD</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="reveal">Quanto custa continuar sem controlar seu dinheiro?</h2>
+    <div class="grid-4">
+      <div class="card reveal delay-1">Faturas esquecidas</div>
+      <div class="card reveal delay-2">Gastos invisíveis</div>
+      <div class="card reveal delay-3">Ansiedade financeira</div>
+      <div class="card reveal delay-4">Planejamento inexistente</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="reveal">Conheça o Grana+</h2>
+    <p class="subtitle reveal delay-1">Tudo que você precisa em um único lugar.</p>
+
+    <div class="grid-3">
+      <div class="feature reveal delay-1">
+        <div class="mockup">MOCKUP DASHBOARD</div>
+        <h3>Dashboard Inteligente</h3>
+      </div>
+
+      <div class="feature reveal delay-2">
+        <div class="mockup">MOCKUP CARTÕES</div>
+        <h3>Cartões</h3>
+      </div>
+
+      <div class="feature reveal delay-3">
+        <div class="mockup">MOCKUP METAS</div>
+        <h3>Metas</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlight">
+  <div class="container reveal">
+    <h2>Dinheiro Livre™</h2>
+    <p>Descubra exatamente quanto você pode gastar sem comprometer suas contas.</p>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container reveal">
+    <h2>Quanto custa continuar sem controlar seu dinheiro?</h2>
+
+    <div class="price-box">
+      <span class="old">De R$97</span>
+      <h3>R$29,90</h3>
+      <p>Pagamento único</p>
+      <small>Menos do que você pode perder esquecendo uma única conta.</small>
+
+      <br><br>
+      <button class="primary big">Começar Agora</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final reveal">
+  <h2>Assuma o controle do seu dinheiro hoje.</h2>
+  <button class="primary big">Começar Agora</button>
+</section>
+
+<script>
+// ANIMAÇÃO
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// FAQ (caso adicionar depois)
+document.querySelectorAll('.faq-item button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const ans = btn.nextElementSibling;
+    ans.style.maxHeight = ans.style.maxHeight ? null : ans.scrollHeight + "px";
+  });
+});
+</script>
+
+</body>
+</html>
